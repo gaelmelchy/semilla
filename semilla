@@ -1,0 +1,32 @@
+//genera numeros y suma con un rango de -100 a 100
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    
+    unsigned int semilla = (unsigned int)time(NULL);
+
+
+    srand(semilla);
+
+    int cantidadNumeros;
+    printf("Introduce la cantidad de números aleatorios a generar: ");
+    scanf("%d", &cantidadNumeros);
+
+    int suma = 0;
+    int contador = 0;
+
+    printf("Numeros aleatorios generados y sumados:\n");
+    while (contador < cantidadNumeros) {
+        int numeroAleatorio = rand() % 201 - 100; 
+        suma += numeroAleatorio;
+        printf("%d ", numeroAleatorio);
+        contador++;
+    }
+
+    printf("\nLa suma de los numeros aleatorios es: %d\n", suma);
+
+    return 0;
+}
